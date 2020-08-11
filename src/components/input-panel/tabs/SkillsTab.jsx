@@ -1,0 +1,83 @@
+import React, {useState, useContext} from "react";
+import { v4 as uuidv4 } from 'uuid';
+
+import AppContext from "../../../context/AppContext";
+import TextField from "../misc/TextField";
+import {DeleteItemButton, AddItemButton, HideShowButton} from "../misc/ButtonsEtc";
+
+const SkillsTab = ({data, onChange}) => {
+    const context = useContext(AppContext);
+    const { dispatch } = context;
+    
+    const newItem = {
+        id: uuidv4(),
+        skill: "",
+    };
+
+    return (
+        <div className="w-100">
+            <TextField 
+                label="Section Title"
+                placeholder="Section Title"
+                value={data.skills.heading}
+                onChange={value => onChange("data.skills.heading", value)}
+                type = "text"
+                customClassInput="border-right-0"
+                addonRightButton={
+                    <HideShowButton 
+                        dispatch={dispatch}
+                        variant="light"
+                        payloadKey={"data.skills.enable"}
+                        customClass="w-100 text-left shadow-none border border-left-0"
+                        currentState={data.skills.enable}
+                    />
+                }
+            />
+            <hr></hr>
+            {data.skills.items.map((item, index) => (
+                <SkillItem 
+                    dispatch={dispatch}
+                    item={data.skills.items[index]}
+                    onChange={onChange}
+                    id={"data.skills.items[" + index + "]"}
+                />
+            ))}
+            <AddItemButton 
+                dispatch={dispatch}
+                payloadKey={"data.skills.items"}
+                item={newItem}
+                label="Add Skill"
+                variant="light"
+                customClass="w-100 text-left shadow-none border"
+            />
+        </div>
+    )
+}
+
+const SkillItem = ({dispatch, item, onChange, id}) => {
+
+    return (
+        <div className="mb-3">
+            <TextField
+                placeholder="Skill"
+                value={item.skill}
+                onChange={value => onChange(`${id}.skill`, value)}
+                type="text"
+                customClassGroup="border rounded"
+                customClassInput=" border-0"
+                addonRightButton={
+                    <DeleteItemButton 
+                        dispatch={dispatch}
+                        payloadKey="data.skills.items"
+                        item={item}
+                        icon="delete"
+                        variant="light"
+                        customClass=""
+                    />
+                }
+            />
+        </div>
+    );
+};
+
+export default SkillsTab;

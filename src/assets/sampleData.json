@@ -1,0 +1,180 @@
+{
+    "data": {
+        "resumeName": "",
+        "dateLastSaved": "",
+        "exportFileName": "",
+        "personal": {
+            "heading": "Personal Information",
+            "photo": "https://www.shemazing.net/wp-content/uploads/2019/02/1550759166_kit-656x436.png",
+            "firstName": "Jonathan",
+            "lastName": "Snow",
+            "subtitle": "King in the North",
+            "location": "Winterfell",
+            "phone": "(777) 777-7777",
+            "website": "",
+            "email": "jon.snow283@gmail.com"
+        },
+        "profile": {
+            "enable": true,
+            "heading": "Profile",
+            "body": "Experienced leader with one successful resurrection under my belt. Good with animals, can command dragons and mind-control wolves. Almost sat on the Iron Throne. I know nothing, but I'm trying to learn."
+        },
+        "work": {
+            "enable": true,
+            "heading": "Work Experience",
+            "items": [
+                {
+                    "id": 1337,
+                    "companyName": "Winterfell",
+                    "subItems": [
+                        {
+                            "id": 1332,
+                            "title": "Warden of the North",
+                            "start": "May 2018",
+                            "end": "Aug 2019",
+                            "description": "Served as Warden of the North under Daenerys Targaryen. Played a key role in the victory over the Night King at the Battle of Winterfell. Screamed at a dragon."
+                        },
+                        {
+                            "id": 1338,
+                            "title": "King in the North",
+                            "start": "May 2018",
+                            "end": "Aug 2019",
+                            "description": "Led a coalition of over 500,000 Northerners and Free Folk to victory against House Bolton at the Battle of the Bastards. Re-established the Kingdom of the North."
+                        }
+                    ]
+                },
+                {
+                    "id": 1339,
+                    "companyName": "Castle Black",
+                    "subItems": [
+                        {
+                            "id": 1340,
+                            "title": "Lord Commander",
+                            "start": "May 2018",
+                            "end": "Aug 2019",
+                            "description": "Elected as Lord Commander of the Night's Watch. Led a successful expedition beyond the Wall, infiltrating the forces of Mance Rayder. Organized the defense of Castle Black against Wilding assault."
+                        },
+                        {
+                            "id": 1341,
+                            "title": "Brother of the Nights Watch",
+                            "start": "May 2018",
+                            "end": "Aug 2019",
+                            "description": "Killed a White Walker. Served as Steward to Lord Commander Jeor Mormont. Fed crows."
+                        }
+                    ]
+                }
+            ]
+        },
+        "education": {
+            "enable": true,
+            "heading": "Education",
+            "items": [
+                {
+                    "id": 1342,
+                    "schoolName": "Winterfell University",
+                    "subItems": [
+                        {
+                            "id": 1500,
+                            "degree": "B.S. Moping",
+                            "grade": "4.0",
+                            "start": "Jan 2000",
+                            "end": "Dec 2005",
+                            "description": "Relevant coursework: Thousand-Yard Stare 101"
+                        }
+                    ]
+                }
+            ]
+        },
+        "skills": {
+            "enable": true,
+            "heading": "Skills",
+            "items": [
+                {
+                    "id": 1343,
+                    "skill": "Longswords"
+                },
+                {
+                    "id": 1345,
+                    "skill": "Warging"
+                },
+                {
+                    "id": 1345,
+                    "skill": "Battle Strategy"
+                },
+                {
+                    "id": 1346,
+                    "skill": "Wolf Training"
+                }
+            ]
+        },
+        "certifications": {
+            "enable": true,
+            "heading": "Certifications",
+            "items": [
+                {
+                    "id": 1342,
+                    "institutionName": "Ygritte Styr",
+                    "subItems": [
+                        {
+                            "id": 1667,
+                            "name": "Negative Knowledge",
+                            "description": "I am a certified expert at knowing nothing"
+                        }
+                    ]
+                }
+            ]
+        },
+        "extras": {
+            "enable": false,
+            "heading": "Additional Information",
+            "items": []
+        },
+        "colors": {
+            "header": {
+                "background": {"name": "background", "value": "#274e72"},
+                "title": {"name": "title font", "value": "#ffffff"},
+                "subTitle": {"name": "subtitle font", "value": "#ffffff"},
+                "rule": {"name": "accent lines", "value": "#d9e6f2"},
+                "photoBorder": {"name": "photo border", "value": "#d9e6f2"},
+                "photoBackground": {"name": "photo background", "value": "#274e72"}
+            },
+
+            "panel": {
+                "background": {"name": "background", "value": "#d9e6f2"},
+                "sectionHeader": {"name": "section title font", "value": "#274e72"},
+                "itemHeader": {"name": "entry title font", "value": "#336699"},
+                "itemSubHeader": {"name": "entry subtitle font", "value": "#000000"},
+                "text": {"name": "entry text", "value": "#000000"},
+                "contactIcons": {"name": "contact icons", "value": "#274e72"},
+                "rule": {"name": "accent lines", "value": "#7aa7d1"}
+            },
+
+            "body": {
+                "background": {"name": "background", "value": "#ffffff"},
+                "sectionHeader": {"name": "section title font", "value": "#274e72"},
+                "itemHeader": {"name": "entry title font", "value": "#336699"},
+                "itemSubHeader": {"name": "entry subtitle font", "value": "#000000"},
+                "date": {"name": "dates", "value": "#000000"},
+                "dateDivider": {"name": "date dividers", "value": "#000000"},
+                "text": {"name": "entry text", "value": "#000000"},
+                "rule": {"name": "accent lines", "value": "#7aa7d1"}
+            }
+        },
+        "fonts": {
+            "titles": {
+                "mainTitle": {"name": "main title", "family": "", "style": "", "size": "44", "weight": "400"},
+                "subTitle": {"name": "subtitle", "family": "", "style": "", "size": "20", "weight": "300"},
+                "sectionTitle": {"name": "section titles", "family": "", "style": "", "size": "16", "weight": "600"},
+                "itemTitle": {"name": "entry titles", "family": "", "style": "", "size": "15", "weight": "600"},
+                "itemSubTitle": {"name": "entry subtitles", "family": "", "style": "", "size": "15", "weight": "500"}
+            },
+            "text": {
+                "itemText": {"name": "entry text", "family": "", "style": "", "size": "15", "weight": "300"},
+                "profileText": {"name": "profile text", "family": "", "style": "", "size": "15", "weight": "400"},
+                "skillsText": {"name": "skills text", "family": "", "style": "", "size": "15", "weight": "400"},
+                "dateText": {"name": "date text", "family": "", "style": "", "size": "15", "weight": "400"},
+                "contactText": {"name": "contact text", "family": "", "style": "", "size": "15", "weight": "400"}
+            }
+        }
+    }
+}
