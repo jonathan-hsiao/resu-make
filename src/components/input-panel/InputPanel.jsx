@@ -16,7 +16,7 @@ import ActionsTab from "./tabs/ActionsTab";
 import AccountTab from "./tabs/AccountTab";
 import SupportTab from "./tabs/SupportTab";
 
-const InputPanel = ({handlePrint}) => {
+const InputPanel = ({handlePrint, handleSaveAsPNG}) => {
     const context = useContext(AppContext);
     const {state, dispatch} = context;
     const {data, tabKey} = state;
@@ -65,7 +65,7 @@ const InputPanel = ({handlePrint}) => {
             case "extras":
                 return <ExtrasTab data={data} onChange={onChange}/>
             case "actions":
-                return <ActionsTab data={data} onChange={onChange} handlePrint={handlePrint}/>
+                return <ActionsTab data={data} onChange={onChange} handlePrint={handlePrint} handleSaveAsPNG={handleSaveAsPNG}/>
             case "account":
                 return <AccountTab data={data} onChange={onChange}/>
             case "support":

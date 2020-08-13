@@ -9,14 +9,17 @@ import Button from "react-bootstrap/Button";
 import OverlayTrigger from "react-bootstrap/OverlayTrigger";
 import Tooltip from "react-bootstrap/Tooltip";
 
-const ActionsTab = ({data, handlePrint, onChange}) => {
+const ActionsTab = ({data, handlePrint, handleSaveAsPNG, onChange}) => {
     const context = useContext(AppContext);
     const { dispatch } = context;
 
     return (
         <div className="w-100">
+            <label className="input-label">file name for export</label>
+            <TooltipButton 
+                tooltipMessage="Print option works best with Google Chrome browser"
+            />
             <TextField
-                label="file name for export"
                 placeholder="file-name"
                 suffix=".pdf"
                 value={data.exportFileName}
@@ -26,10 +29,17 @@ const ActionsTab = ({data, handlePrint, onChange}) => {
             />
             <CustomButton 
                 variant="light"
-                label="Export as PDF"
+                label="Print"
                 icon="print"
-                customClass="w-100 h-100 text-left shadow-none border"
+                customClass="w-100 h-100 text-left shadow-none border mb-2"
                 onClick={handlePrint}
+            />
+            <CustomButton 
+                variant="light"
+                label="Save as PDF (png)"
+                icon="save"
+                customClass="w-100 h-100 text-left shadow-none border"
+                onClick={handleSaveAsPNG}
             />
             <hr className="input-divider mt-4 mb-3"></hr>
             <div className="form-row">

@@ -15,7 +15,9 @@ const Resume = () => {
             height: "11in",
             backgroundColor: "white",
             overflow: "hidden",
-            padding: 0
+            padding: 0,
+            WebkitPrintColorAdjust: "exact",
+            colorAdjust: "exact"
         },
 
         // Header Styles
@@ -515,7 +517,7 @@ const Resume = () => {
 
 
     return (
-        <div style={styles.resumeStyle}>
+        <div className="resume" style={styles.resumeStyle}>
             {/* resume header */}
             <div style={styles.headerStyle}>
                 <Photo />
