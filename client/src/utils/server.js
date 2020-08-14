@@ -68,7 +68,7 @@ const getAsync = (url, body) => {
     return callFetchAsync(url, "GET", body);
 };
 
-module.exports = {
+export {
     getServerApiUrl,
     postAsync,
     getAsync

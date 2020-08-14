@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.js": "/static/js/main.d7df0ff3.chunk.js",
+    "main.js.map": "/static/js/main.d7df0ff3.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.f213391c.js",
+    "runtime-main.js.map": "/static/js/runtime-main.f213391c.js.map",
+    "static/css/2.11829350.chunk.css": "/static/css/2.11829350.chunk.css",
+    "static/js/2.d145d6a1.chunk.js": "/static/js/2.d145d6a1.chunk.js",
+    "static/js/2.d145d6a1.chunk.js.map": "/static/js/2.d145d6a1.chunk.js.map",
+    "index.html": "/index.html",
+    "precache-manifest.8d63075e94eae0761ab7a4362f488b9c.js": "/precache-manifest.8d63075e94eae0761ab7a4362f488b9c.js",
+    "service-worker.js": "/service-worker.js",
+    "static/css/2.11829350.chunk.css.map": "/static/css/2.11829350.chunk.css.map",
+    "static/js/2.d145d6a1.chunk.js.LICENSE.txt": "/static/js/2.d145d6a1.chunk.js.LICENSE.txt",
+    "static/media/ios-app-store-logo.png": "/static/media/ios-app-store-logo.1b94a031.png",
+    "static/media/rssblack.png": "/static/media/rssblack.a895ced5.png",
+    "static/media/rssgray.png": "/static/media/rssgray.305445dc.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.f213391c.js",
+    "static/css/2.11829350.chunk.css",
+    "static/js/2.d145d6a1.chunk.js",
+    "static/js/main.d7df0ff3.chunk.js"
+  ]
+}
