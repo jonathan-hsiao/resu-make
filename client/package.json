@@ -1,0 +1,47 @@
+{
+  "name": "resume-builder",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@babel/node": "^7.10.4",
+    "@babel/preset-env": "^7.10.4",
+    "@testing-library/jest-dom": "^4.2.4",
+    "@testing-library/react": "^9.5.0",
+    "@testing-library/user-event": "^7.2.1",
+    "bootstrap": "^4.5.0",
+    "html2canvas": "^1.0.0-rc.5",
+    "jspdf": "^1.5.3",
+    "lodash": "^4.17.15",
+    "popper.js": "^1.16.1",
+    "react": "^16.13.1",
+    "react-bootstrap": "^1.0.1",
+    "react-dom": "^16.13.1",
+    "react-easy-panzoom": "^0.4.4",
+    "react-scripts": "^3.4.3",
+    "typescript": "^3.9.6",
+    "webfontloader": "^1.6.28",
+    "dotenv": "^8.2.0"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "proxy": "http://localhost:5000",
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}
