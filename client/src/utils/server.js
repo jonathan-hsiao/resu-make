@@ -1,14 +1,32 @@
 
-const getBaseApiUrl = () => {
-    // const url = process.env.REACT_APP_BASE_API_URL;
-    const url = "/api"
-    return url;
+const getBaseApiUrl = async () => {
+    try {
+        const response = await fetch("/getBaseApiUrl", {
+            method: "GET",
+            credentials: "same-origin",
+        });
+        return await response.json();
+    } catch (err) {
+        return {
+            success: false,
+            data: err
+        }
+    }
 };
 
-const getServerApiUrl = () => {
-    // const url = process.env.REACT_APP_BASE_API_URL;
-    const url = "http://localhost:5000/api"
-    return url;
+const getServerApiUrl = async () => {
+    try {
+        const response = await fetch("/getServerApiUrl", {
+            method: "GET",
+            credentials: "same-origin",
+        });
+        return await response.json();
+    } catch (err) {
+        return {
+            success: false,
+            data: err
+        }
+    }
 };
 
 const callFetchAsync = async (url, method, body, headers = {}) => {
@@ -24,8 +42,10 @@ const callFetchAsync = async (url, method, body, headers = {}) => {
         if (body) {
             options.body = JSON.stringify(body);
         }
+
+        const { data: apiUrl } = await getBaseApiUrl();
         
-        const response = await fetch(`${getBaseApiUrl()}${url}`, {
+        const response = await fetch(`${apiUrl}${url}`, {
             method,
             credentials: "same-origin",
             ...options

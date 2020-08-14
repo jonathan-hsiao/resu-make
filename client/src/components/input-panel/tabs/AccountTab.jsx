@@ -31,6 +31,7 @@ const AccountTab = ({data, onChange}) => {
     const [loginErrMsg, setLoginErrMsg] = useState(""); //login error for label
     const [saveErrMsg, setSaveErrMsg] = useState(""); //save error for label
     const [delErrMsg, setDelErrMsg] = useState(""); //delete error for label
+    const [serverApiUrl, setServerApiUrl] = useState("");
 
     useEffect(() => {
         if (needsRefresh) {
@@ -38,6 +39,9 @@ const AccountTab = ({data, onChange}) => {
             loadData();
             refreshFonts(data);
             setNeedsRefresh(false);
+        }
+        if (serverApiUrl == "") {
+            getApiUrl();
         }
     });
 
@@ -55,6 +59,11 @@ const AccountTab = ({data, onChange}) => {
                 value
             }
         });
+    };
+
+    const getApiUrl = async () => {
+        const { data: apiUrl } = await server.getServerApiUrl();
+        setServerApiUrl(apiUrl);
     };
 
     const handleLogin = async e => {
@@ -211,6 +220,7 @@ const AccountTab = ({data, onChange}) => {
                 loginErrMsg={loginErrMsg}
                 setLoginErrMsg={setLoginErrMsg}
                 clearErrors={clearErrors}
+                serverApiUrl={serverApiUrl}
             />
             <LogoutCluster 
                 isLoggedIn={isLoggedIn}
@@ -334,8 +344,10 @@ const LoginCluster = ({
         setNeedsRefresh,
         loginErrMsg,
         setLoginErrMsg,
-        clearErrors
+        clearErrors,
+        serverApiUrl
     }) => {
+    
     return (
         !isLoggedIn && (
             <div>
@@ -373,7 +385,7 @@ const LoginCluster = ({
                     clearErrors={clearErrors}
                 />
                 <GoogleButton
-                    href={`${server.getServerApiUrl()}/auth/google`}
+                    href={`${serverApiUrl}/auth/google`}
                     onClick={() => {setNeedsRefresh(true)}}
                 />
             </div>
