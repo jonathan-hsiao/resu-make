@@ -1,13 +1,11 @@
 import React, { useContext, useState, useEffect } from "react";
 import AppContext from "../../../context/AppContext";
 import TextField from "../misc/TextField";
-import { CustomButton } from "../misc/ButtonsEtc";
+import { CustomButton, TooltipButton } from "../misc/ButtonsEtc";
 import { clearAll, loadExample, isColor, replaceColor, refreshFonts } from "../../../utils";
 
 import Collapse from "react-bootstrap/Collapse";
 import Button from "react-bootstrap/Button";
-import OverlayTrigger from "react-bootstrap/OverlayTrigger";
-import Tooltip from "react-bootstrap/Tooltip";
 
 const ActionsTab = ({data, handlePrint, handleSaveAsPNG, onChange}) => {
     const context = useContext(AppContext);
@@ -17,7 +15,7 @@ const ActionsTab = ({data, handlePrint, handleSaveAsPNG, onChange}) => {
         <div className="w-100">
             <label className="input-label">file name for export</label>
             <TooltipButton 
-                tooltipMessage="Print option works best with Google Chrome browser"
+                tooltipMessage="Exporting works best with Google Chrome browser on non-mobile devices"
             />
             <TextField
                 placeholder="file-name"
@@ -259,29 +257,6 @@ const ColorForm = ({label, onChange, data, section}) => {
                 </div>
             </Collapse>
         </div>
-    );
-};
-
-const TooltipButton = ({tooltipMessage}) => {
-    const [icon, setIcon] = useState("info_outline");
-
-    return (
-        <OverlayTrigger
-            placement="right"
-            overlay={
-                <Tooltip>
-                    {tooltipMessage}
-                </Tooltip>
-            }
-        >
-            <Button 
-                className="info-button"
-                onMouseEnter={() => setIcon("info")}
-                onMouseLeave={() => setIcon("info_outline")}
-            >
-                <i className="material-icons info-icon">{icon}</i>
-            </Button>
-        </OverlayTrigger>
     );
 };
 

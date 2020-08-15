@@ -87,7 +87,7 @@ const initialState = {
                 mainTitle: {name: "main title", family: "", style: "", size: "44", weight: "400"},
                 subTitle: {name: "subtitle", family: "", style: "", size: "20", weight: "300"},
                 sectionTitle: {name: "section title", family: "", style: "", size: "16", weight: "600"},
-                itemTitle: {name: "entry title", family: "", style: "", size: "15", weight: "600"},
+                itemTitle: {name: "entry title", family: "", style: "", size: "16", weight: "600"},
                 itemSubTitle: {name: "entry subtitle", family: "", style: "", size: "15", weight: "500"},
             },
             text: {

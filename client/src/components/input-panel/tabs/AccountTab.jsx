@@ -40,10 +40,13 @@ const AccountTab = ({data, onChange}) => {
             refreshFonts(data);
             setNeedsRefresh(false);
         }
+    }, [needsRefresh]);
+
+    useEffect(() => {
         if (serverApiUrl == "") {
             getApiUrl();
         }
-    });
+    }, [serverApiUrl]);
 
     const clearErrors = () => {
         setSaveErrMsg("");

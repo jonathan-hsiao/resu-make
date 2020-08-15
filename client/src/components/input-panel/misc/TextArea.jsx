@@ -16,7 +16,7 @@ const TextArea = ({
     <div className={"form-group " + customClassGroup}>
         <label className={labelClassName}>{label}</label>
         <textarea 
-            className={"form-control input-text shadow-none " + customClassInput}
+            className={"form-control input-text shadow-none input-text-area " + customClassInput}
             rows={rows}
             placeholder={placeholder}
             value={value}

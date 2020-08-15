@@ -32,14 +32,14 @@
                             "title": "Warden of the North",
                             "start": "May 2018",
                             "end": "Aug 2019",
-                            "description": "Served as Warden of the North under Daenerys Targaryen. Played a key role in the victory over the Night King at the Battle of Winterfell. Screamed at a dragon."
+                            "description": "\u2022 Served as Warden of the North under Daenerys Targaryen.\n\u2022 Played a key role in the victory over the Night King at the Battle of Winterfell.\n\u2022 Screamed at a dragon."
                         },
                         {
                             "id": 1338,
                             "title": "King in the North",
                             "start": "May 2018",
                             "end": "Aug 2019",
-                            "description": "Led a coalition of over 500,000 Northerners and Free Folk to victory against House Bolton at the Battle of the Bastards. Re-established the Kingdom of the North."
+                            "description": "\u2022 Led a coalition of over 500,000 Northerners and Free Folk to victory against House Bolton at the Battle of the Bastards.\n\u2022 Re-established the Kingdom of the North."
                         }
                     ]
                 },
@@ -52,14 +52,14 @@
                             "title": "Lord Commander",
                             "start": "May 2018",
                             "end": "Aug 2019",
-                            "description": "Elected as Lord Commander of the Night's Watch. Led a successful expedition beyond the Wall, infiltrating the forces of Mance Rayder. Organized the defense of Castle Black against Wilding assault."
+                            "description": "\u2022 Elected as Lord Commander of the Night's Watch.\n\u2022 Led a successful expedition beyond the Wall, infiltrating the forces of Mance Rayder.\n\u2022 Organized the defense of Castle Black against Wilding assault."
                         },
                         {
                             "id": 1341,
                             "title": "Brother of the Nights Watch",
                             "start": "May 2018",
                             "end": "Aug 2019",
-                            "description": "Killed a White Walker. Served as Steward to Lord Commander Jeor Mormont. Fed crows."
+                            "description": "\u2022 Killed a White Walker singlehandedly.\n\u2022 Served as Steward to Lord Commander Jeor Mormont.\n\u2022 Fed crows."
                         }
                     ]
                 }
@@ -165,7 +165,7 @@
                 "mainTitle": {"name": "main title", "family": "", "style": "", "size": "44", "weight": "400"},
                 "subTitle": {"name": "subtitle", "family": "", "style": "", "size": "20", "weight": "300"},
                 "sectionTitle": {"name": "section titles", "family": "", "style": "", "size": "16", "weight": "600"},
-                "itemTitle": {"name": "entry titles", "family": "", "style": "", "size": "15", "weight": "600"},
+                "itemTitle": {"name": "entry titles", "family": "", "style": "", "size": "16", "weight": "600"},
                 "itemSubTitle": {"name": "entry subtitles", "family": "", "style": "", "size": "15", "weight": "500"}
             },
             "text": {

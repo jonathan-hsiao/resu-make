@@ -1,7 +1,11 @@
 import React, {useState} from "react";
 import {updateInput, deleteItem, addItem} from "../../../utils";
+
 import Button from "react-bootstrap/Button";
 import InputGroup from "react-bootstrap/InputGroup";
+import OverlayTrigger from "react-bootstrap/OverlayTrigger";
+import Tooltip from "react-bootstrap/Tooltip";
+
 import GoogleLogo from "../../../assets/images/googlelogo32px.png";
 import BMCLogo from "../../../assets/images/bmc-button.png"
 import LILogoBlue from "../../../assets/images/LIButtonBlue.png"
@@ -231,6 +235,29 @@ const WebsiteButton = () => {
     );
 };
 
+const TooltipButton = ({tooltipMessage}) => {
+    const [icon, setIcon] = useState("help_outline");
+
+    return (
+        <OverlayTrigger
+            placement="right"
+            overlay={
+                <Tooltip>
+                    {tooltipMessage}
+                </Tooltip>
+            }
+        >
+            <Button 
+                className="info-button"
+                onMouseEnter={() => setIcon("help")}
+                onMouseLeave={() => setIcon("help_outline")}
+            >
+                <i className="material-icons info-icon">{icon}</i>
+            </Button>
+        </OverlayTrigger>
+    );
+};
+
 export {
     DeleteItemButton,
     AddItemButton,
@@ -242,4 +269,5 @@ export {
     LinkedInButton,
     IOSAppStoreButton,
     WebsiteButton,
+    TooltipButton,
 }

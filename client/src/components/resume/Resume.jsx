@@ -28,7 +28,7 @@ const Resume = () => {
             display: "flex"
         },
         headerTitleStyle: {
-            color: replaceColor(data.colors.header.title.value, "white"),
+            color: replaceColor(data.colors.header.title.value, "black"),
             fontFamily: data.fonts.titles.mainTitle.family,
             fontStyle: data.fonts.titles.mainTitle.style,
             fontSize: data.fonts.titles.mainTitle.size + "px",
@@ -39,7 +39,7 @@ const Resume = () => {
             textAlign: (data.personal.photo !== "") ? "left" : "center"
         },
         headerSubTitleStyle: {
-            color: replaceColor(data.colors.header.subTitle.value, "white"),
+            color: replaceColor(data.colors.header.subTitle.value, "black"),
             fontFamily: data.fonts.titles.subTitle.family,
             fontStyle: data.fonts.titles.subTitle.style,
             fontSize: data.fonts.titles.subTitle.size + "px",
@@ -49,7 +49,7 @@ const Resume = () => {
             textAlign: (data.personal.photo !== "") ? "left" : "center"
         },
         headerRuleStyle: {
-            color: replaceColor(data.colors.header.rule.value, "white"),
+            color: replaceColor(data.colors.header.rule.value, "black"),
             borderTop: "1px solid",
             marginTop: "20px",
             marginBottom: "-20px",
@@ -112,7 +112,7 @@ const Resume = () => {
             width: panelWidth + "%"
         },
         panelSectionHeaderStyle: {
-            color: replaceColor(data.colors.panel.sectionHeader.value, "white"),
+            color: replaceColor(data.colors.panel.sectionHeader.value, "black"),
             fontFamily: data.fonts.titles.sectionTitle.family,
             fontStyle: data.fonts.titles.sectionTitle.style,
             fontSize: data.fonts.titles.sectionTitle.size + "px",
@@ -123,12 +123,12 @@ const Resume = () => {
             fontWeight: 600
         },
         contactIconStyle: {
-            color: replaceColor(data.colors.panel.contactIcons.value, "white"),
+            color: replaceColor(data.colors.panel.contactIcons.value, "black"),
             fontSize: "16px",
             textAlign: "center"
         },
         contactTextStyle: {
-            color: replaceColor(data.colors.panel.text.value, "white"),
+            color: replaceColor(data.colors.panel.text.value, "black"),
             fontFamily: data.fonts.text.contactText.family,
             fontStyle: data.fonts.text.contactText.style,
             fontSize: data.fonts.text.contactText.size + "px",
@@ -151,28 +151,29 @@ const Resume = () => {
             marginBottom: "16px",
         },
         panelItemHeaderStyle: {
-            color: replaceColor(data.colors.panel.itemHeader.value, "white"),
+            color: replaceColor(data.colors.panel.itemHeader.value, "black"),
             fontFamily: data.fonts.titles.itemTitle.family,
             fontStyle: data.fonts.titles.itemTitle.style,
             fontSize: data.fonts.titles.itemTitle.size + "px",
             fontWeight: data.fonts.titles.itemTitle.weight
         },
         panelItemSubHeaderStyle: {
-            color: replaceColor(data.colors.panel.itemSubHeader.value, "white"),
+            color: replaceColor(data.colors.panel.itemSubHeader.value, "black"),
             fontFamily: data.fonts.titles.itemSubTitle.family,
             fontStyle: data.fonts.titles.itemSubTitle.style,
             fontSize: data.fonts.titles.itemSubTitle.size + "px",
             fontWeight: data.fonts.titles.itemSubTitle.weight
         },
         panelItemTextStyle: {
-            color: replaceColor(data.colors.panel.text.value, "white"),
+            color: replaceColor(data.colors.panel.text.value, "black"),
             fontFamily: data.fonts.text.itemText.family,
             fontStyle: data.fonts.text.itemText.style,
             fontSize: data.fonts.text.itemText.size + "px",
-            fontWeight: data.fonts.text.itemText.weight
+            fontWeight: data.fonts.text.itemText.weight,
+            whiteSpace: "pre-wrap"
         },
         panelSkillTextStyle: {
-            color: replaceColor(data.colors.panel.text.value, "white"),
+            color: replaceColor(data.colors.panel.text.value, "black"),
             fontFamily: data.fonts.text.skillsText.family,
             fontStyle: data.fonts.text.skillsText.style,
             fontSize: data.fonts.text.skillsText.size + "px",
@@ -180,16 +181,17 @@ const Resume = () => {
             marginBottom: "10px"
         },
         panelProfileTextStyle: {
-            color: replaceColor(data.colors.panel.text.value, "white"),
+            color: replaceColor(data.colors.panel.text.value, "black"),
             fontFamily: data.fonts.text.profileText.family,
             fontStyle: data.fonts.text.profileText.style,
             fontSize: data.fonts.text.profileText.size + "px",
             fontWeight: data.fonts.text.profileText.weight,
-            lineHeight: 1.8
+            lineHeight: 1.8,
+            whiteSpace: "pre-wrap"
         },
         panelRuleStyle: {
-            color: replaceColor(data.colors.panel.rule, "white"), 
-            backgroundColor: replaceColor(data.colors.panel.rule.value, "white"),
+            color: replaceColor(data.colors.panel.rule, "black"), 
+            backgroundColor: replaceColor(data.colors.panel.rule.value, "black"),
             marginTop: "5px",
             marginBottom: "10px",
             border: "0 none",
@@ -204,7 +206,7 @@ const Resume = () => {
             width: (100 - panelWidth) + "%"
         },
         bodySectionHeaderStyle: {
-            color: replaceColor(data.colors.body.sectionHeader.value, "white"),
+            color: replaceColor(data.colors.body.sectionHeader.value, "black"),
             fontFamily: data.fonts.titles.sectionTitle.family,
             fontStyle: data.fonts.titles.sectionTitle.style,
             fontSize: data.fonts.titles.sectionTitle.size + "px",
@@ -215,43 +217,44 @@ const Resume = () => {
             fontWeight: 600
         },
         bodyItemHeaderStyle: {
-            color: replaceColor(data.colors.body.itemHeader.value, "white"),
+            color: replaceColor(data.colors.body.itemHeader.value, "black"),
             fontFamily: data.fonts.titles.itemTitle.family,
             fontStyle: data.fonts.titles.itemTitle.style,
             fontSize: data.fonts.titles.itemTitle.size + "px",
             fontWeight: data.fonts.titles.itemTitle.weight
         },
         bodyItemSubHeaderStyle: {
-            color: replaceColor(data.colors.body.itemSubHeader.value, "white"),
+            color: replaceColor(data.colors.body.itemSubHeader.value, "black"),
             fontFamily: data.fonts.titles.itemSubTitle.family,
             fontStyle: data.fonts.titles.itemSubTitle.style,
             fontSize: data.fonts.titles.itemSubTitle.size + "px",
             fontWeight: data.fonts.titles.itemSubTitle.weight
         },
         bodyItemDate: {
-            color: replaceColor(data.colors.body.date.value, "white"),
+            color: replaceColor(data.colors.body.date.value, "black"),
             fontFamily: data.fonts.text.dateText.family,
             fontStyle: data.fonts.text.dateText.style,
             fontSize: data.fonts.text.dateText.size + "px",
             fontWeight: data.fonts.text.dateText.weight
         },
         bodyItemDateDivider: {
-            color: replaceColor(data.colors.body.dateDivider.value, "white"),
+            color: replaceColor(data.colors.body.dateDivider.value, "black"),
             fontFamily: data.fonts.text.dateText.family,
             // fontStyle: data.fonts.text.dateText.style,
             fontSize: data.fonts.text.dateText.size + "px",
             fontWeight: data.fonts.text.dateText.weight
         },
         bodyItemTextStyle: {
-            color: replaceColor(data.colors.body.text.value, "white"),
+            color: replaceColor(data.colors.body.text.value, "black"),
             fontFamily: data.fonts.text.itemText.family,
             fontStyle: data.fonts.text.itemText.style,
             fontSize: data.fonts.text.itemText.size + "px",
-            fontWeight: data.fonts.text.itemText.weight
+            fontWeight: data.fonts.text.itemText.weight,
+            whiteSpace: "pre-wrap"
         },
         bodyRuleStyle: {
-            color: replaceColor(data.colors.body.rule, "white"), 
-            backgroundColor: replaceColor(data.colors.panel.rule.value, "white"),
+            color: replaceColor(data.colors.body.rule, "black"), 
+            backgroundColor: replaceColor(data.colors.panel.rule.value, "black"),
             marginTop: "5px",
             marginBottom: "10px",
             border: "0 none",
