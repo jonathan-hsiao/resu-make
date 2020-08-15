@@ -20,6 +20,7 @@ app.use(json());
 app.use(cookieParser());
 app.use(passport.initialize());
 app.use(express.static(path.join(__dirname, "client", "build")));
+app.enable("trust proxy");
 
 router(app);
 initializeAuthentication(app);
