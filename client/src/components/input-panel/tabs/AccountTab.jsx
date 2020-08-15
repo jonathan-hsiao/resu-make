@@ -203,6 +203,7 @@ const AccountTab = ({data, onChange}) => {
             console.log(data);
             clearAll(userDispatch);
             setIsLoggedIn(false);
+            onChange("data.resumeName", "")
             return;
         }
     };
