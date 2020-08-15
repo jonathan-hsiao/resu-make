@@ -62,7 +62,7 @@ const AccountTab = ({data, onChange}) => {
     };
 
     const getApiUrl = async () => {
-        const { data: apiUrl } = await server.getServerApiUrl();
+        const { data: apiUrl } = await server.getBaseApiUrl();
         setServerApiUrl(apiUrl);
     };
 

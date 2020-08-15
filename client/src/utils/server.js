@@ -14,21 +14,6 @@ const getBaseApiUrl = async () => {
     }
 };
 
-const getServerApiUrl = async () => {
-    try {
-        const response = await fetch("/getServerApiUrl", {
-            method: "GET",
-            credentials: "same-origin",
-        });
-        return await response.json();
-    } catch (err) {
-        return {
-            success: false,
-            data: err
-        }
-    }
-};
-
 const callFetchAsync = async (url, method, body, headers = {}) => {
     try {
         const options = {
@@ -69,7 +54,7 @@ const getAsync = (url, body) => {
 };
 
 export {
-    getServerApiUrl,
+    getBaseApiUrl,
     postAsync,
     getAsync
 };
