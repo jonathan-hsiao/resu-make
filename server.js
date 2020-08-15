@@ -22,15 +22,6 @@ app.use(passport.initialize());
 app.use(express.static(path.join(__dirname, "client", "build")));
 app.enable("trust proxy"); //heroku handles https, node never sees req.connection.encrypted so thinks it is undefined
 
-function requireHTTPS(req, res, next) {
-    // The 'x-forwarded-proto' check is for Heroku
-    if (!req.secure && req.get('x-forwarded-proto') !== 'https' && process.env.NODE_ENV == "production") {
-      return res.redirect('https://' + req.headers.host + req.url);
-    }
-    next();
-  }
-app.use(requireHTTPS);
-
 router(app);
 initializeAuthentication(app);
 
