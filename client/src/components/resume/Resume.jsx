@@ -17,7 +17,8 @@ const Resume = () => {
             overflow: "hidden",
             padding: 0,
             WebkitPrintColorAdjust: "exact",
-            colorAdjust: "exact"
+            colorAdjust: "exact",
+            overflowWrap: "break-word"
         },
 
         // Header Styles
