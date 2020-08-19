@@ -255,7 +255,7 @@ const Resume = () => {
         },
         bodyRuleStyle: {
             color: replaceColor(data.colors.body.rule, "black"), 
-            backgroundColor: replaceColor(data.colors.panel.rule.value, "black"),
+            backgroundColor: replaceColor(data.colors.body.rule.value, "black"),
             marginTop: "5px",
             marginBottom: "10px",
             border: "0 none",
