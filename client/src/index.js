@@ -6,6 +6,7 @@ import {UserProvider} from "./context/UserContext";
 import Resume from "./components/resume/Resume";
 
 import "bootstrap/dist/css/bootstrap.min.css";
+import 'react-bootstrap-range-slider/dist/react-bootstrap-range-slider.css';
 
 ReactDOM.render(
     <AppProvider>

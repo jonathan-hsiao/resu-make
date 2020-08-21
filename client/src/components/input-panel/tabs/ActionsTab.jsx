@@ -6,6 +6,7 @@ import { clearAll, loadExample, isColor, replaceColor, refreshFonts } from "../.
 
 import Collapse from "react-bootstrap/Collapse";
 import Button from "react-bootstrap/Button";
+import RangeSlider from 'react-bootstrap-range-slider';
 
 const ActionsTab = ({data, handlePrint, handleSaveAsPNG, onChange}) => {
     const context = useContext(AppContext);
@@ -103,6 +104,15 @@ const ActionsTab = ({data, handlePrint, handleSaveAsPNG, onChange}) => {
             />
             <FontForm 
                 label="Text Fonts"
+                onChange={onChange}
+                data={data}
+                section="text"
+            />
+
+            <hr className="input-divider mt-4 mb-3"></hr>
+            <label className="input-label">Customize Layout</label>
+            <LayoutForm
+                label="Dimensions"
                 onChange={onChange}
                 data={data}
                 section="text"
@@ -254,6 +264,46 @@ const ColorForm = ({label, onChange, data, section}) => {
                             </div>
                         )
                     })}
+                </div>
+            </Collapse>
+        </div>
+    );
+};
+
+const LayoutForm = ({label, onChange, data}) => {    
+    const [openState, setOpen] = useState(false);
+    return (
+        <div className="mb-2 border rounded">
+            <Button 
+                className="w-100 text-left shadow-none input-collapse-btn"
+                variant="btn-light" 
+                onClick={() => {
+                    setOpen(!openState)
+                }}
+                aria-controls="collapseItem"
+                aria-expanded={openState}
+            >
+                {label}
+            </Button>
+            <Collapse in={openState}>
+                <div className="form-group px-3 py-1" id="collapseItem">
+                    {Object.keys(data.layout.dimensions).map((key, index) => {
+                        return (
+                            <div className="mb-3">
+                                <label className="input-label mb-0">{data.layout.dimensions[key].name}</label>
+                                <RangeSlider
+                                    value={data.layout.dimensions[key].value}
+                                    onChange={event => onChange(`data.layout.dimensions.${key}.value`, event.target.value)}
+                                    size="sm"
+                                    variant="secondary"
+                                    tooltipLabel={currentValue => `${currentValue + data.layout.dimensions[key].unit}`}
+                                    min={parseFloat(data.layout.dimensions[key].min)}
+                                    max={parseFloat(data.layout.dimensions[key].max)}
+                                    step={parseFloat(data.layout.dimensions[key].step)}
+                                />
+                            </div>
+                        )})
+                    }
                 </div>
             </Collapse>
         </div>

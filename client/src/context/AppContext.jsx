@@ -98,6 +98,13 @@ const initialState = {
                 contactText: {name: "contact text", family: "", style: "", size: "15", weight: "400"},
             },
         },
+        layout: {
+            dimensions: {
+                headerHeight: {name: "header height", value: "17.5", min: "0", max: "100", step: "0.5", unit: "%"},
+                panelWidth: {name: "panel width", value: "32", min: "0", max: "100", step: "0.5", unit: "%"},
+                photoDiameter: {name: "photo diameter", value: "145", min: "0", max: "300", step: "1.0", unit: "px"},
+            },
+        },
     },
     tabKey: "personal",
 };
@@ -154,7 +161,7 @@ const reducer = (state, {type, payload}) => {
     }
 };
 
-const localState = JSON.parse(localStorage.getItem("appContext"));
+const localState = JSON.parse(sessionStorage.getItem("appContext"));
 
 const AppContext = createContext(initialState);
 
@@ -163,7 +170,7 @@ const StateProvider = ({ children }) => {
     const [state, dispatch] = useReducer(reducer, localState || initialState);
 
     useEffect(() => {
-        localStorage.setItem("appContext", JSON.stringify(state));
+        sessionStorage.setItem("appContext", JSON.stringify(state));
     }, [state]);
 
     const value = {state, dispatch};

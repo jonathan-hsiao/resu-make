@@ -7,7 +7,9 @@ const Resume = () => {
     const { state } = context;
     const { data } = state;
 
-    const [panelWidth, setPanelWidth] = useState(32);
+    const headerHeight = (data.layout.dimensions.headerHeight.value == "") ? "17.5" : data.layout.dimensions.headerHeight.value;
+    const panelWidth = (data.layout.dimensions.panelWidth.value == "") ? "32" : data.layout.dimensions.panelWidth.value;
+    const photoDiameter = (data.layout.dimensions.photoDiameter.value == "") ? "145" : data.layout.dimensions.photoDiameter.value;
 
     const styles = {
         resumeStyle: {
@@ -24,7 +26,7 @@ const Resume = () => {
         // Header Styles
         headerStyle: {
             backgroundColor: replaceColor(data.colors.header.background.value, "white"),
-            height: "17.5%",
+            height: headerHeight + "%",
             margin: 0,
             display: "flex"
         },
@@ -69,8 +71,8 @@ const Resume = () => {
             color: replaceColor(data.colors.header.photoBorder.value, "white"),
             objectFit: "cover", /* Do not scale the image */
             objectPosition: "center", /* Center the image within the element */
-            height: "145px",
-            width: "145px",
+            height: data.layout.dimensions.photoDiameter.value + "px",
+            width: data.layout.dimensions.photoDiameter.value + "px",
             borderRadius: "50%",
             borderWidth: "1px",
             borderStyle: "solid",
@@ -90,7 +92,7 @@ const Resume = () => {
 
         // Main Page Styles
         mainPageStyle: {
-            height: "82.5%",
+            height: (100 - headerHeight) + "%",
             margin: 0,
             display: "flex"
         },
@@ -109,7 +111,6 @@ const Resume = () => {
         panelStyle: {
             backgroundColor: replaceColor(data.colors.panel.background.value, "white"),
             padding: "10px 30px 10px 30px",
-            height: "100%",
             width: panelWidth + "%"
         },
         panelSectionHeaderStyle: {

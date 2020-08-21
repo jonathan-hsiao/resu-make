@@ -55,7 +55,7 @@ const reducer = (state, {type, payload}) => {
     }
 };
 
-const localState = JSON.parse(localStorage.getItem("userContext"));
+const localState = JSON.parse(sessionStorage.getItem("userContext"));
 
 const UserContext = createContext(initialState);
 
@@ -64,7 +64,7 @@ const StateProvider = ({ children }) => {
     const [state, dispatch] = useReducer(reducer, localState || initialState);
 
     useEffect(() => {
-        localStorage.setItem("userContext", JSON.stringify(state));
+        sessionStorage.setItem("userContext", JSON.stringify(state));
     }, [state]);
 
     const value = {state, dispatch};
