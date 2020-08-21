@@ -71,8 +71,8 @@ const Resume = () => {
             color: replaceColor(data.colors.header.photoBorder.value, "white"),
             objectFit: "cover", /* Do not scale the image */
             objectPosition: "center", /* Center the image within the element */
-            height: data.layout.dimensions.photoDiameter.value + "px",
-            width: data.layout.dimensions.photoDiameter.value + "px",
+            height: photoDiameter + "px",
+            width: photoDiameter + "px",
             borderRadius: "50%",
             borderWidth: "1px",
             borderStyle: "solid",
@@ -121,7 +121,6 @@ const Resume = () => {
             fontWeight: data.fonts.titles.sectionTitle.weight,
             textTransform: "uppercase",
             marginBottom: 0,
-            fontSize: "15px",
             fontWeight: 600
         },
         contactIconStyle: {
@@ -215,7 +214,6 @@ const Resume = () => {
             fontWeight: data.fonts.titles.sectionTitle.weight,
             textTransform: "uppercase",
             marginBottom: 0,
-            fontSize: "15px",
             fontWeight: 600
         },
         bodyItemHeaderStyle: {
