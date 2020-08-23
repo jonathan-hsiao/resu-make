@@ -12,6 +12,7 @@ import EducationTab from "./tabs/EducationTab";
 import SkillsTab from "./tabs/SkillsTab";
 import CertificationsTab from "./tabs/CertificationsTab";
 import ExtrasTab from "./tabs/ExtrasTab";
+import CustomizeTab from "./tabs/CustomizeTab";
 import ActionsTab from "./tabs/ActionsTab";
 import AccountTab from "./tabs/AccountTab";
 import SupportTab from "./tabs/SupportTab";
@@ -29,6 +30,7 @@ const InputPanel = ({handlePrint, handleSaveAsPNG}) => {
         {key: "skills", name: data.skills.heading, isEnabled: data.skills.enable, type: "input"},
         {key: "certifications", name: data.certifications.heading, isEnabled: data.certifications.enable, type: "input"},
         {key: "extras", name: data.extras.heading, isEnabled: data.extras.enable, type: "input"},
+        {key: "customize", name: "Customize", isEnabled: true, type: "action"},
         {key: "actions", name: "Control Panel", isEnabled: true, type: "action"},
         {key: "account", name: "My Account", isEnabled: true, type: "action"},
         {key: "support", name: "Get in Touch", isEnabled: true, type: "contact"},
@@ -64,6 +66,8 @@ const InputPanel = ({handlePrint, handleSaveAsPNG}) => {
                 return <CertificationsTab data={data} onChange={onChange}/>
             case "extras":
                 return <ExtrasTab data={data} onChange={onChange}/>
+            case "customize":
+                return <CustomizeTab data={data} onChange={onChange}/>
             case "actions":
                 return <ActionsTab data={data} onChange={onChange} handlePrint={handlePrint} handleSaveAsPNG={handleSaveAsPNG}/>
             case "account":
