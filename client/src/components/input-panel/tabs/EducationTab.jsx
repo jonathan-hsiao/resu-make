@@ -4,7 +4,7 @@ import { v4 as uuidv4 } from 'uuid';
 import AppContext from "../../../context/AppContext";
 import TextField from "../misc/TextField";
 import TextArea from "../misc/TextArea";
-import {DeleteItemButton, AddItemButton, HideShowButton} from "../misc/ButtonsEtc";
+import {DeleteItemButton, AddItemButton, MoveItemButton, HideShowButton} from "../misc/ButtonsEtc";
 
 import Collapse from "react-bootstrap/Collapse";
 import Button from "react-bootstrap/Button";
@@ -48,6 +48,7 @@ const EducationTab = ({data, onChange}) => {
                 <EducationItem 
                     dispatch={dispatch}
                     item={data.education.items[index]}
+                    currentIndex ={index}
                     onChange={onChange}
                     id={"data.education.items[" + index + "]"}
                     shouldOpen={(item.id === newItemId)}
@@ -66,7 +67,7 @@ const EducationTab = ({data, onChange}) => {
     );
 };
 
-const EducationMajor = ({dispatch, major, onChange, parentid, subid, needsDivider}) => {
+const EducationMajor = ({dispatch, major, currentIndex, onChange, parentid, subid, needsDivider}) => {
     const divider = needsDivider && (
         <hr class="input-divider"></hr>
     );
@@ -79,6 +80,18 @@ const EducationMajor = ({dispatch, major, onChange, parentid, subid, needsDivide
                 value={major.degree}
                 onChange={value => onChange(`${subid}.degree`, value)}
                 type="text"
+                addonLeftButton={
+                    <MoveItemButton
+                        dispatch={dispatch}
+                        payloadKey={parentid + ".subItems"}
+                        item={major}
+                        currentIndex={currentIndex}
+                        upIcon="keyboard_arrow_up"
+                        downIcon="keyboard_arrow_down"
+                        variant="light"
+                        customClass="border-top border-bottom"
+                    />
+                }
                 addonRightButton={
                     <DeleteItemButton 
                         dispatch={dispatch}
@@ -122,7 +135,7 @@ const EducationMajor = ({dispatch, major, onChange, parentid, subid, needsDivide
     )
 }
 
-const EducationItem = ({dispatch, item, onChange, id, shouldOpen=false}) => {
+const EducationItem = ({dispatch, item, currentIndex, onChange, id, shouldOpen=false}) => {
     const [open, setOpen] = useState(shouldOpen);
 
     const newSubItem = {
@@ -148,7 +161,19 @@ const EducationItem = ({dispatch, item, onChange, id, shouldOpen=false}) => {
                         {!item.schoolName ? "Untitled" : item.schoolName}
                     </Button>
                 </div>
-                <div className="col-2 p-0">
+                <div className="col-1 p-0">
+                    <MoveItemButton
+                        dispatch={dispatch}
+                        payloadKey="data.education.items"
+                        item={item}
+                        currentIndex={currentIndex}
+                        upIcon="keyboard_arrow_up"
+                        downIcon="keyboard_arrow_down"
+                        customClass="w-100 h-100 p-0 shadow-none"
+                        variant="light shadow-none border-0"
+                    />
+                </div>
+                <div className="col-1 p-0">
                     <DeleteItemButton 
                         dispatch={dispatch}
                         payloadKey="data.education.items"
@@ -173,6 +198,7 @@ const EducationItem = ({dispatch, item, onChange, id, shouldOpen=false}) => {
                         <EducationMajor
                             dispatch={dispatch}
                             major={major}
+                            currentIndex={index}
                             onChange={onChange}
                             subid={id + ".subItems[" + index + "]"}
                             parentid={id}

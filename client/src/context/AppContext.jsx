@@ -1,4 +1,5 @@
 import React, { createContext, useReducer, useEffect } from "react";
+import {arrayMove} from "../utils";
 import get from "lodash/get";
 import set from "lodash/set";
 import remove from "lodash/remove";
@@ -125,6 +126,15 @@ const reducer = (state, {type, payload}) => {
         case "addItem":
             items = get({...newState}, payload.key, []);
             items.push(payload.value);
+            return set({...newState}, payload.key, items);
+
+        case "moveItem":
+            items = get({...newState}, payload.key, []);
+            let newIndex = (payload.direction === "down") ? 
+                Math.min(payload.currentIndex + 1, items.length - 1) : 
+                Math.max(payload.currentIndex - 1, 0)
+
+            arrayMove(items, payload.currentIndex, newIndex)
             return set({...newState}, payload.key, items);
 
         case 'importData':

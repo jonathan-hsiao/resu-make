@@ -5,6 +5,7 @@ const TextField = ({
         label,
         prefix,
         suffix,
+        addonLeftButton,
         addonRightButton,
         placeholder,
         value,
@@ -28,6 +29,11 @@ const TextField = ({
             <InputGroup.Text className="input-addon">{suffix}</InputGroup.Text>
         </InputGroup.Append>
     );
+    const leftButton = (addonLeftButton) && (
+        <InputGroup.Append>
+            {addonLeftButton}
+        </InputGroup.Append>
+    );
     const rightButton = (addonRightButton) && (
         <InputGroup.Append>
             {addonRightButton}
@@ -48,6 +54,7 @@ const TextField = ({
                     disabled={disabled}
                 />
                 {suffixAppend}
+                {leftButton}
                 {rightButton}
             </InputGroup>
         </div>

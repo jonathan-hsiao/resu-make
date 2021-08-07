@@ -148,6 +148,14 @@
     text-align: center !important;
 }
 
+.input-blank-icon {
+    font-size: 16px !important;
+    color: #666666;
+    vertical-align: middle !important;
+    text-align: center !important;
+    opacity: 0 !important;
+}
+
 .input-icon-light {
     font-size: 16px !important;
     color: #ababab;

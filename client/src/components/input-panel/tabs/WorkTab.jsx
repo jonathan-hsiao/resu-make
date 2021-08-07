@@ -4,7 +4,7 @@ import { v4 as uuidv4 } from 'uuid';
 import AppContext from "../../../context/AppContext";
 import TextField from "../misc/TextField";
 import TextArea from "../misc/TextArea";
-import {DeleteItemButton, AddItemButton, HideShowButton} from "../misc/ButtonsEtc";
+import {DeleteItemButton, AddItemButton, MoveItemButton, HideShowButton} from "../misc/ButtonsEtc";
 
 import Collapse from "react-bootstrap/Collapse";
 import Button from "react-bootstrap/Button";
@@ -48,6 +48,7 @@ const WorkTab = ({data, onChange}) => {
                 <WorkItem 
                     dispatch={dispatch}
                     item={data.work.items[index]}
+                    currentIndex ={index}
                     onChange={onChange}
                     id={"data.work.items[" + index + "]"}
                     shouldOpen={(item.id === newItemId)}
@@ -66,7 +67,7 @@ const WorkTab = ({data, onChange}) => {
     );
 };
 
-const WorkRole = ({dispatch, role, onChange, parentid, subid, needsDivider}) => {
+const WorkRole = ({dispatch, role, currentIndex, onChange, parentid, subid, needsDivider}) => {
     const divider = needsDivider && (
         <hr class="input-divider"></hr>
     );
@@ -79,6 +80,18 @@ const WorkRole = ({dispatch, role, onChange, parentid, subid, needsDivider}) => 
                 value={role.title}
                 onChange={value => onChange(`${subid}.title`, value)}
                 type="text"
+                addonLeftButton={
+                    <MoveItemButton
+                        dispatch={dispatch}
+                        payloadKey={parentid + ".subItems"}
+                        item={role}
+                        currentIndex={currentIndex}
+                        upIcon="keyboard_arrow_up"
+                        downIcon="keyboard_arrow_down"
+                        variant="light"
+                        customClass="border-top border-bottom"
+                    />
+                }
                 addonRightButton={
                     <DeleteItemButton 
                         dispatch={dispatch}
@@ -122,7 +135,7 @@ const WorkRole = ({dispatch, role, onChange, parentid, subid, needsDivider}) => 
     )
 }
 
-const WorkItem = ({dispatch, item, onChange, id, shouldOpen=false}) => {
+const WorkItem = ({dispatch, item, currentIndex, onChange, id, shouldOpen=false}) => {
     const [open, setOpen] = useState(shouldOpen);
 
     const newSubItem = {
@@ -147,7 +160,19 @@ const WorkItem = ({dispatch, item, onChange, id, shouldOpen=false}) => {
                         {!item.companyName ? "Untitled" : item.companyName}
                     </Button>
                 </div>
-                <div className="col-2 p-0">
+                <div className="col-1 p-0">
+                    <MoveItemButton
+                        dispatch={dispatch}
+                        payloadKey="data.work.items"
+                        item={item}
+                        currentIndex={currentIndex}
+                        upIcon="keyboard_arrow_up"
+                        downIcon="keyboard_arrow_down"
+                        customClass="w-100 h-100 p-0 shadow-none"
+                        variant="light shadow-none border-0"
+                    />
+                </div>
+                <div className="col-1 p-0">
                     <DeleteItemButton 
                         dispatch={dispatch}
                         payloadKey="data.work.items"
@@ -172,6 +197,7 @@ const WorkItem = ({dispatch, item, onChange, id, shouldOpen=false}) => {
                         <WorkRole 
                             dispatch={dispatch}
                             role={role}
+                            currentIndex={index}
                             onChange={onChange}
                             subid={id + ".subItems[" + index + "]"}
                             parentid={id}

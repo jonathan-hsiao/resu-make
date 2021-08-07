@@ -4,7 +4,7 @@ import { v4 as uuidv4 } from 'uuid';
 import AppContext from "../../../context/AppContext";
 import TextField from "../misc/TextField";
 import TextArea from "../misc/TextArea";
-import {DeleteItemButton, AddItemButton, HideShowButton} from "../misc/ButtonsEtc";
+import {DeleteItemButton, AddItemButton, MoveItemButton, HideShowButton} from "../misc/ButtonsEtc";
 
 import Collapse from "react-bootstrap/Collapse";
 import Button from "react-bootstrap/Button";
@@ -49,6 +49,7 @@ const ExtrasTab = ({data, onChange}) => {
                 <ExtraItem 
                     dispatch={dispatch}
                     item={data.extras.items[index]}
+                    currentIndex ={index}
                     onChange={onChange}
                     id={"data.extras.items[" + index + "]"}
                     shouldOpen={(item.id === newItemId)}
@@ -67,7 +68,7 @@ const ExtrasTab = ({data, onChange}) => {
     );
 };
 
-const ExtraItem = ({dispatch, item, onChange, id, shouldOpen=false}) => {
+const ExtraItem = ({dispatch, item, currentIndex, onChange, id, shouldOpen=false}) => {
     const [open, setOpen] = useState(shouldOpen);
 
     return (
@@ -84,7 +85,19 @@ const ExtraItem = ({dispatch, item, onChange, id, shouldOpen=false}) => {
                         {!item.title ? "Untitled" : item.title}
                     </Button>
                 </div>
-                <div className="col-2 p-0">
+                <div className="col-1 p-0">
+                    <MoveItemButton
+                        dispatch={dispatch}
+                        payloadKey="data.extras.items"
+                        item={item}
+                        currentIndex={currentIndex}
+                        upIcon="keyboard_arrow_up"
+                        downIcon="keyboard_arrow_down"
+                        customClass="w-100 h-100 p-0 shadow-none"
+                        variant="light shadow-none border-0"
+                    />
+                </div>
+                <div className="col-1 p-0">
                     <DeleteItemButton 
                         dispatch={dispatch}
                         payloadKey="data.extras.items"

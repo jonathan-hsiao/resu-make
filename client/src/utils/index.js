@@ -34,6 +34,18 @@ const addItem = (dispatch, key, value) => {
     });
 };
 
+const moveItem = (dispatch, key, value, currentIndex, direction) => {
+    dispatch({
+        type: "moveItem",
+        payload: {
+            key,
+            value,
+            currentIndex,
+            direction
+        }
+    });
+};
+
 const importData = (dispatch, data) => {
     dispatch({
         type: "importData",
@@ -50,6 +62,12 @@ const clearAll = (dispatch) => {
 const loadExample = (dispatch) => {
     dispatch({type: "loadExample"});
 };
+
+const arrayMove = (arr, fromIndex, toIndex) => {
+    var element = arr[fromIndex];
+    arr.splice(fromIndex, 1);
+    arr.splice(toIndex, 0, element);
+}
 
 const isColor = (strColor) => {
     const s = new Option().style;
@@ -137,12 +155,14 @@ export {
     updateInput,
     deleteItem,
     addItem,
+    moveItem,
     importData,
     clearAll,
     loadExample,
+    arrayMove,
     isColor,
     replaceColor,
     refreshFonts,
     createPDF,
-    server,
+    server
 };

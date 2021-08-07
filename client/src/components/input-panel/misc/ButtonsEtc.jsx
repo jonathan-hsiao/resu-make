@@ -1,5 +1,5 @@
 import React, {useState} from "react";
-import {updateInput, deleteItem, addItem} from "../../../utils";
+import {updateInput, deleteItem, addItem, moveItem} from "../../../utils";
 
 import Button from "react-bootstrap/Button";
 import InputGroup from "react-bootstrap/InputGroup";
@@ -33,6 +33,43 @@ const DeleteItemButton = ({
             onClick={() => deleteItem(dispatch, payloadKey, item)}
         >
         {buttonIcon}{label}
+        </Button>
+    );
+};
+
+const MoveItemButton = ({
+        dispatch, 
+        variant="outline-danger shadow-none", 
+        payloadKey, 
+        item, 
+        currentIndex,
+        label,
+        upIcon, 
+        downIcon,
+        customClass,
+    }) => {
+
+    const upButtonIcon = (upIcon !== "") && (<i className="material-icons input-icon">{upIcon}</i>);
+    const downButtonIcon = (downIcon !== "") && (<i className="material-icons input-icon">{downIcon}</i>);
+
+    if (currentIndex === 0) {
+        return (
+            <Button
+                className={"input-button " + customClass}
+                variant={variant}
+                onClick={() => moveItem(dispatch, payloadKey, item, currentIndex, "down")}
+            >
+            {downButtonIcon}{label}
+            </Button>
+        );
+    }
+    return (
+        <Button
+            className={"input-button " + customClass}
+            variant={variant}
+            onClick={() => moveItem(dispatch, payloadKey, item, currentIndex, "up")}
+        >
+        {upButtonIcon}{label}
         </Button>
     );
 };
@@ -261,6 +298,7 @@ const TooltipButton = ({tooltipMessage}) => {
 export {
     DeleteItemButton,
     AddItemButton,
+    MoveItemButton,
     HideShowButton,
     CustomButton,
     LinkButton,

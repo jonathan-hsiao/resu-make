@@ -4,7 +4,7 @@ import { v4 as uuidv4 } from 'uuid';
 import AppContext from "../../../context/AppContext";
 import TextField from "../misc/TextField";
 import TextArea from "../misc/TextArea";
-import {DeleteItemButton, AddItemButton, HideShowButton} from "../misc/ButtonsEtc";
+import {DeleteItemButton, AddItemButton, MoveItemButton, HideShowButton} from "../misc/ButtonsEtc";
 
 import Collapse from "react-bootstrap/Collapse";
 import Button from "react-bootstrap/Button";
@@ -48,6 +48,7 @@ const CertificationsTab = ({data, onChange}) => {
                 <CertificationItem 
                     dispatch={dispatch}
                     item={data.certifications.items[index]}
+                    currentIndex ={index}
                     onChange={onChange}
                     id={"data.certifications.items[" + index + "]"}
                     shouldOpen={(item.id === newItemId)}
@@ -66,7 +67,7 @@ const CertificationsTab = ({data, onChange}) => {
     );
 };
 
-const CertificationCert = ({dispatch, cert, onChange, parentid, subid, needsDivider}) => {
+const CertificationCert = ({dispatch, cert, currentIndex, onChange, parentid, subid, needsDivider}) => {
     const divider = needsDivider && (
         <hr class="input-divider"></hr>
     );
@@ -79,6 +80,18 @@ const CertificationCert = ({dispatch, cert, onChange, parentid, subid, needsDivi
                 value={cert.name}
                 onChange={value => onChange(`${subid}.name`, value)}
                 type="text"
+                addonLeftButton={
+                    <MoveItemButton
+                        dispatch={dispatch}
+                        payloadKey={parentid + ".subItems"}
+                        item={cert}
+                        currentIndex={currentIndex}
+                        upIcon="keyboard_arrow_up"
+                        downIcon="keyboard_arrow_down"
+                        variant="light"
+                        customClass="border-top border-bottom"
+                    />
+                }
                 addonRightButton={
                     <DeleteItemButton 
                         dispatch={dispatch}
@@ -102,7 +115,7 @@ const CertificationCert = ({dispatch, cert, onChange, parentid, subid, needsDivi
     )
 }
 
-const CertificationItem = ({dispatch, item, onChange, id, shouldOpen=false}) => {
+const CertificationItem = ({dispatch, item, currentIndex, onChange, id, shouldOpen=false}) => {
     const [open, setOpen] = useState(shouldOpen);
 
     const newSubItem = {
@@ -125,7 +138,19 @@ const CertificationItem = ({dispatch, item, onChange, id, shouldOpen=false}) => 
                         {!item.institutionName ? "Untitled" : item.institutionName}
                     </Button>
                 </div>
-                <div className="col-2 p-0">
+                <div className="col-1 p-0">
+                    <MoveItemButton
+                        dispatch={dispatch}
+                        payloadKey="data.certifications.items"
+                        item={item}
+                        currentIndex={currentIndex}
+                        upIcon="keyboard_arrow_up"
+                        downIcon="keyboard_arrow_down"
+                        customClass="w-100 h-100 p-0 shadow-none"
+                        variant="light shadow-none border-0"
+                    />
+                </div>
+                <div className="col-1 p-0">
                     <DeleteItemButton 
                         dispatch={dispatch}
                         payloadKey="data.certifications.items"
@@ -150,6 +175,7 @@ const CertificationItem = ({dispatch, item, onChange, id, shouldOpen=false}) => 
                         <CertificationCert
                             dispatch={dispatch}
                             cert={cert}
+                            currentIndex={index}
                             onChange={onChange}
                             subid={id + ".subItems[" + index + "]"}
                             parentid={id}

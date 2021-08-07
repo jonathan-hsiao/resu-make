@@ -3,7 +3,7 @@ import { v4 as uuidv4 } from 'uuid';
 
 import AppContext from "../../../context/AppContext";
 import TextField from "../misc/TextField";
-import {DeleteItemButton, AddItemButton, HideShowButton} from "../misc/ButtonsEtc";
+import {DeleteItemButton, AddItemButton, MoveItemButton, HideShowButton} from "../misc/ButtonsEtc";
 
 const SkillsTab = ({data, onChange}) => {
     const context = useContext(AppContext);
@@ -38,6 +38,7 @@ const SkillsTab = ({data, onChange}) => {
                 <SkillItem 
                     dispatch={dispatch}
                     item={data.skills.items[index]}
+                    currentIndex ={index}
                     onChange={onChange}
                     id={"data.skills.items[" + index + "]"}
                 />
@@ -54,7 +55,7 @@ const SkillsTab = ({data, onChange}) => {
     )
 }
 
-const SkillItem = ({dispatch, item, onChange, id}) => {
+const SkillItem = ({dispatch, item, currentIndex, onChange, id}) => {
 
     return (
         <div className="mb-3">
@@ -65,6 +66,18 @@ const SkillItem = ({dispatch, item, onChange, id}) => {
                 type="text"
                 customClassGroup="border rounded"
                 customClassInput=" border-0"
+                addonLeftButton={
+                    <MoveItemButton
+                        dispatch={dispatch}
+                        payloadKey="data.skills.items"
+                        item={item}
+                        currentIndex={currentIndex}
+                        upIcon="keyboard_arrow_up"
+                        downIcon="keyboard_arrow_down"
+                        variant="light"
+                        customClass=""
+                    />
+                }
                 addonRightButton={
                     <DeleteItemButton 
                         dispatch={dispatch}
