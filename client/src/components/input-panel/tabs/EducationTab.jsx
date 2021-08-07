@@ -80,6 +80,7 @@ const EducationMajor = ({dispatch, major, currentIndex, onChange, parentid, subi
                 value={major.degree}
                 onChange={value => onChange(`${subid}.degree`, value)}
                 type="text"
+                buttonAppendGroupClass='input-addon-btn-narrow'
                 addonLeftButton={
                     <MoveItemButton
                         dispatch={dispatch}
@@ -89,7 +90,7 @@ const EducationMajor = ({dispatch, major, currentIndex, onChange, parentid, subi
                         upIcon="keyboard_arrow_up"
                         downIcon="keyboard_arrow_down"
                         variant="light"
-                        customClass="border-top border-bottom"
+                        customClass="border-top border-bottom w-100"
                     />
                 }
                 addonRightButton={
@@ -99,7 +100,7 @@ const EducationMajor = ({dispatch, major, currentIndex, onChange, parentid, subi
                         item={major}
                         icon="delete"
                         variant="light"
-                        customClass="border-top border-right border-bottom"
+                        customClass="border-top border-right border-bottom w-100"
                     />
                 }
             />

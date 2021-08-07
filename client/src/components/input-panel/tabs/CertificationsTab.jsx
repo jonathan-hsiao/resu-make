@@ -80,6 +80,7 @@ const CertificationCert = ({dispatch, cert, currentIndex, onChange, parentid, su
                 value={cert.name}
                 onChange={value => onChange(`${subid}.name`, value)}
                 type="text"
+                buttonAppendGroupClass='input-addon-btn-narrow'
                 addonLeftButton={
                     <MoveItemButton
                         dispatch={dispatch}
@@ -89,7 +90,7 @@ const CertificationCert = ({dispatch, cert, currentIndex, onChange, parentid, su
                         upIcon="keyboard_arrow_up"
                         downIcon="keyboard_arrow_down"
                         variant="light"
-                        customClass="border-top border-bottom"
+                        customClass="border-top border-bottom w-100"
                     />
                 }
                 addonRightButton={
@@ -99,7 +100,7 @@ const CertificationCert = ({dispatch, cert, currentIndex, onChange, parentid, su
                         item={cert}
                         icon="delete"
                         variant="light"
-                        customClass="border-top border-right border-bottom"
+                        customClass="border-top border-right border-bottom w-100"
                     />
                 }
             />

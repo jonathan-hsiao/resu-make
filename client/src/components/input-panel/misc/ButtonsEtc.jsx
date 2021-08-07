@@ -28,7 +28,7 @@ const DeleteItemButton = ({
     
     return (
         <Button
-            className={"input-button " + customClass}
+            className={"input-button-nopad " + customClass}
             variant={variant}
             onClick={() => deleteItem(dispatch, payloadKey, item)}
         >
@@ -49,13 +49,13 @@ const MoveItemButton = ({
         customClass,
     }) => {
 
-    const upButtonIcon = (upIcon !== "") && (<i className="material-icons input-icon">{upIcon}</i>);
-    const downButtonIcon = (downIcon !== "") && (<i className="material-icons input-icon">{downIcon}</i>);
+    const upButtonIcon = (upIcon !== "") && (<i className="material-icons input-icon w-100">{upIcon}</i>);
+    const downButtonIcon = (downIcon !== "") && (<i className="material-icons input-icon w-100">{downIcon}</i>);
 
     if (currentIndex === 0) {
         return (
             <Button
-                className={"input-button " + customClass}
+                className={"input-button-nopad " + customClass}
                 variant={variant}
                 onClick={() => moveItem(dispatch, payloadKey, item, currentIndex, "down")}
             >
@@ -65,7 +65,7 @@ const MoveItemButton = ({
     }
     return (
         <Button
-            className={"input-button " + customClass}
+            className={"input-button-nopad " + customClass}
             variant={variant}
             onClick={() => moveItem(dispatch, payloadKey, item, currentIndex, "up")}
         >

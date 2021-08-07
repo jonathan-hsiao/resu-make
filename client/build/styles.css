@@ -141,6 +141,10 @@
     font-size: 15px !important;
 }
 
+.input-addon-btn-narrow {
+    width: 30px !important;
+}
+
 .input-icon {
     font-size: 16px !important;
     color: #666666;
@@ -167,6 +171,13 @@
     font-size: 15px !important;
     text-align: center !important;
     vertical-align: middle !important;
+}
+
+.input-button-nopad {
+    font-size: 15px !important;
+    text-align: center !important;
+    vertical-align: middle !important;
+    padding: 0 !important;
 }
 
 .input-button-row {

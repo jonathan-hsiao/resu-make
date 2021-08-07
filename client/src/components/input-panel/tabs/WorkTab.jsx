@@ -80,6 +80,7 @@ const WorkRole = ({dispatch, role, currentIndex, onChange, parentid, subid, need
                 value={role.title}
                 onChange={value => onChange(`${subid}.title`, value)}
                 type="text"
+                buttonAppendGroupClass='input-addon-btn-narrow'
                 addonLeftButton={
                     <MoveItemButton
                         dispatch={dispatch}
@@ -89,7 +90,7 @@ const WorkRole = ({dispatch, role, currentIndex, onChange, parentid, subid, need
                         upIcon="keyboard_arrow_up"
                         downIcon="keyboard_arrow_down"
                         variant="light"
-                        customClass="border-top border-bottom"
+                        customClass="border-top border-bottom w-100"
                     />
                 }
                 addonRightButton={
@@ -99,7 +100,7 @@ const WorkRole = ({dispatch, role, currentIndex, onChange, parentid, subid, need
                         item={role}
                         icon="delete"
                         variant="light"
-                        customClass="border-top border-right border-bottom"
+                        customClass="border-top border-right border-bottom w-100"
                     />
                 }
             />

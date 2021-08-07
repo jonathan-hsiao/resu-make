@@ -66,6 +66,7 @@ const SkillItem = ({dispatch, item, currentIndex, onChange, id}) => {
                 type="text"
                 customClassGroup="border rounded"
                 customClassInput=" border-0"
+                buttonAppendGroupClass='input-addon-btn-narrow'
                 addonLeftButton={
                     <MoveItemButton
                         dispatch={dispatch}
@@ -75,7 +76,7 @@ const SkillItem = ({dispatch, item, currentIndex, onChange, id}) => {
                         upIcon="keyboard_arrow_up"
                         downIcon="keyboard_arrow_down"
                         variant="light"
-                        customClass=""
+                        customClass="w-100"
                     />
                 }
                 addonRightButton={
@@ -85,7 +86,7 @@ const SkillItem = ({dispatch, item, currentIndex, onChange, id}) => {
                         item={item}
                         icon="delete"
                         variant="light"
-                        customClass=""
+                        customClass="w-100"
                     />
                 }
             />

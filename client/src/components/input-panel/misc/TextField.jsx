@@ -5,6 +5,7 @@ const TextField = ({
         label,
         prefix,
         suffix,
+        buttonAppendGroupClass,
         addonLeftButton,
         addonRightButton,
         placeholder,
@@ -30,12 +31,12 @@ const TextField = ({
         </InputGroup.Append>
     );
     const leftButton = (addonLeftButton) && (
-        <InputGroup.Append>
+        <InputGroup.Append className={buttonAppendGroupClass}>
             {addonLeftButton}
         </InputGroup.Append>
     );
     const rightButton = (addonRightButton) && (
-        <InputGroup.Append>
+        <InputGroup.Append className={buttonAppendGroupClass}>
             {addonRightButton}
         </InputGroup.Append>
     );
