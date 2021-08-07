@@ -90,7 +90,7 @@ const EducationMajor = ({dispatch, major, currentIndex, onChange, parentid, subi
                         upIcon="keyboard_arrow_up"
                         downIcon="keyboard_arrow_down"
                         variant="light"
-                        customClass="border-top border-bottom w-100"
+                        customClass="border-top border-bottom w-100 shadow-none"
                     />
                 }
                 addonRightButton={
@@ -100,7 +100,7 @@ const EducationMajor = ({dispatch, major, currentIndex, onChange, parentid, subi
                         item={major}
                         icon="delete"
                         variant="light"
-                        customClass="border-top border-right border-bottom w-100"
+                        customClass="border-top border-right border-bottom w-100 shadow-none"
                     />
                 }
             />

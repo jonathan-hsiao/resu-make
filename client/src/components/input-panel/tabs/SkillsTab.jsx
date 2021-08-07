@@ -76,7 +76,7 @@ const SkillItem = ({dispatch, item, currentIndex, onChange, id}) => {
                         upIcon="keyboard_arrow_up"
                         downIcon="keyboard_arrow_down"
                         variant="light"
-                        customClass="w-100"
+                        customClass="w-100 shadow-none"
                     />
                 }
                 addonRightButton={
@@ -86,7 +86,7 @@ const SkillItem = ({dispatch, item, currentIndex, onChange, id}) => {
                         item={item}
                         icon="delete"
                         variant="light"
-                        customClass="w-100"
+                        customClass="w-100 shadow-none"
                     />
                 }
             />
