@@ -64,6 +64,8 @@ const CustomizeTab = ({data, onChange}) => {
                 section="text"
             />
 
+            <hr className = "input-divider mb-4"></hr>
+            <BMCButton/>
         </div>
     );
 };
@@ -252,9 +254,6 @@ const LayoutForm = ({label, onChange, data}) => {
                     }
                 </div>
             </Collapse>
-
-            <hr className = "input-divider mb-4"></hr>
-            <BMCButton/>
         </div>
     );
 };

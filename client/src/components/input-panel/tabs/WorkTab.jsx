@@ -63,6 +63,9 @@ const WorkTab = ({data, onChange}) => {
                 customClass="w-100 text-left shadow-none border"
                 getNewId={getNewId}
             />
+
+            <hr className = "input-divider mb-4"></hr>
+            <BMCButton/>
         </div>
     );
 };
@@ -215,9 +218,6 @@ const WorkItem = ({dispatch, item, currentIndex, onChange, id, shouldOpen=false}
                     />
                 </div>
             </Collapse>
-
-            <hr className = "input-divider mb-4"></hr>
-            <BMCButton/>
         </div>
     );
 };

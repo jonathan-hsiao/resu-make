@@ -51,6 +51,9 @@ const SkillsTab = ({data, onChange}) => {
                 variant="light"
                 customClass="w-100 text-left shadow-none border"
             />
+
+            <hr className = "input-divider mb-4"></hr>
+            <BMCButton/>
         </div>
     )
 }
@@ -90,9 +93,6 @@ const SkillItem = ({dispatch, item, currentIndex, onChange, id}) => {
                     />
                 }
             />
-
-            <hr className = "input-divider mb-4"></hr>
-            <BMCButton/>
         </div>
     );
 };

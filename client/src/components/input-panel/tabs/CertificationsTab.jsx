@@ -63,6 +63,9 @@ const CertificationsTab = ({data, onChange}) => {
                 customClass="w-100 text-left shadow-none border"
                 getNewId={getNewId}
             />
+
+            <hr className = "input-divider mb-4"></hr>
+            <BMCButton/>
         </div>
     );
 };
@@ -193,9 +196,6 @@ const CertificationItem = ({dispatch, item, currentIndex, onChange, id, shouldOp
                     />
                 </div>
             </Collapse>
-
-            <hr className = "input-divider mb-4"></hr>
-            <BMCButton/>
         </div>
     );
 };

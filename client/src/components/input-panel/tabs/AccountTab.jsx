@@ -277,6 +277,9 @@ const AccountTab = ({data, onChange}) => {
                 open={openSaved}
                 setOpen={setOpenSaved}
             />
+            
+            <hr className = "input-divider mb-4"></hr>
+            <BMCButton/>
 
         </div>
     );
@@ -544,9 +547,6 @@ const ResumesDropdown = ({resumes, dispatch, deleteResume, selected, setSelected
                     </ListGroup>
                 </div>
             </Collapse>
-
-            <hr className = "input-divider mb-4"></hr>
-            <BMCButton/>
         </div>
     );
 }
