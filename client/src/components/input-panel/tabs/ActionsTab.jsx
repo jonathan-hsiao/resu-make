@@ -28,14 +28,14 @@ const ActionsTab = ({data, handlePrint, handleSaveAsPNG, onChange}) => {
             />
             <CustomButton 
                 variant="light"
-                label="Print"
+                label="Print (or print to pdf)"
                 icon="print"
                 customClass="w-100 h-100 text-left shadow-none border mb-2"
                 onClick={handlePrint}
             />
             <CustomButton 
                 variant="light"
-                label="Save as PDF (png)"
+                label="Save as pdf (png screenshot)"
                 icon="save"
                 customClass="w-100 h-100 text-left shadow-none border"
                 onClick={handleSaveAsPNG}
