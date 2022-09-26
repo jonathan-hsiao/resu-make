@@ -3,7 +3,7 @@ import { v4 as uuidv4 } from 'uuid';
 
 import AppContext from "../../../context/AppContext";
 import TextField from "../misc/TextField";
-import {DeleteItemButton, AddItemButton, MoveItemButton, HideShowButton} from "../misc/ButtonsEtc";
+import {DeleteItemButton, AddItemButton, MoveItemButton, HideShowButton, BMCButton} from "../misc/ButtonsEtc";
 
 const SkillsTab = ({data, onChange}) => {
     const context = useContext(AppContext);
@@ -90,6 +90,9 @@ const SkillItem = ({dispatch, item, currentIndex, onChange, id}) => {
                     />
                 }
             />
+
+            <hr className = "input-divider mb-4"></hr>
+            <BMCButton/>
         </div>
     );
 };

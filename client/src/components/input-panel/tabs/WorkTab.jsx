@@ -4,7 +4,7 @@ import { v4 as uuidv4 } from 'uuid';
 import AppContext from "../../../context/AppContext";
 import TextField from "../misc/TextField";
 import TextArea from "../misc/TextArea";
-import {DeleteItemButton, AddItemButton, MoveItemButton, HideShowButton} from "../misc/ButtonsEtc";
+import {DeleteItemButton, AddItemButton, MoveItemButton, HideShowButton, BMCButton} from "../misc/ButtonsEtc";
 
 import Collapse from "react-bootstrap/Collapse";
 import Button from "react-bootstrap/Button";
@@ -215,6 +215,9 @@ const WorkItem = ({dispatch, item, currentIndex, onChange, id, shouldOpen=false}
                     />
                 </div>
             </Collapse>
+
+            <hr className = "input-divider mb-4"></hr>
+            <BMCButton/>
         </div>
     );
 };

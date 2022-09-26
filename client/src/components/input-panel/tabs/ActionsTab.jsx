@@ -1,7 +1,7 @@
 import React, { useContext, useState, useEffect } from "react";
 import AppContext from "../../../context/AppContext";
 import TextField from "../misc/TextField";
-import { CustomButton, TooltipButton } from "../misc/ButtonsEtc";
+import { CustomButton, TooltipButton, BMCButton } from "../misc/ButtonsEtc";
 import { clearAll, loadExample, isColor, replaceColor, refreshFonts } from "../../../utils";
 
 import Collapse from "react-bootstrap/Collapse";
@@ -66,6 +66,9 @@ const ActionsTab = ({data, handlePrint, handleSaveAsPNG, onChange}) => {
                     />
                 </div>
             </div>
+
+            <hr className = "input-divider mb-4"></hr>
+            <BMCButton/>
 
         </div>
     );

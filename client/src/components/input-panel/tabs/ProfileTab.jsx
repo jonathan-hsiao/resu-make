@@ -2,7 +2,7 @@ import React, {useState, useContext} from "react";
 import AppContext from "../../../context/AppContext";
 import TextField from "../misc/TextField";
 import TextArea from "../misc/TextArea";
-import {HideShowButton} from "../misc/ButtonsEtc";
+import { HideShowButton, BMCButton } from "../misc/ButtonsEtc";
 
 const ProfileTab = ({data, onChange}) => {
     const context = useContext(AppContext);
@@ -36,8 +36,8 @@ const ProfileTab = ({data, onChange}) => {
                 rows="15"
             />
 
-            
-
+            <hr className = "input-divider mb-4"></hr>
+            <BMCButton/>
         </div>
     )
 };

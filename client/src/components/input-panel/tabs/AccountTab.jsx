@@ -2,7 +2,7 @@ import React, {useState, useContext, useEffect} from "react";
 import AppContext from "../../../context/AppContext";
 import UserContext from "../../../context/UserContext";
 import TextField from "../misc/TextField";
-import { CustomButton, TableButton, DeleteItemButton, LinkButton, GoogleButton } from "../misc/ButtonsEtc";
+import { CustomButton, TableButton, DeleteItemButton, LinkButton, GoogleButton, BMCButton } from "../misc/ButtonsEtc";
 
 import Collapse from "react-bootstrap/Collapse";
 import Button from "react-bootstrap/Button";
@@ -544,6 +544,9 @@ const ResumesDropdown = ({resumes, dispatch, deleteResume, selected, setSelected
                     </ListGroup>
                 </div>
             </Collapse>
+
+            <hr className = "input-divider mb-4"></hr>
+            <BMCButton/>
         </div>
     );
 }

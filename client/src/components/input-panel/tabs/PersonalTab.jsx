@@ -1,5 +1,6 @@
 import React, {useState, useContext} from "react";
 import TextField from "../misc/TextField";
+import {BMCButton} from "../misc/ButtonsEtc";
 
 const PersonalTab = ({data, onChange}) => {
 
@@ -69,8 +70,9 @@ const PersonalTab = ({data, onChange}) => {
                 onChange={value => onChange("data.personal.location", value)}
                 type = "text"
             />
-            
 
+            <hr className = "input-divider mb-4"></hr>
+            <BMCButton/>
         </div>
     )
 };
