@@ -4,4 +4,4 @@ A lightweight resume builder web app built with the **MERN** stack (MongoDB, Exp
 
 **Live:** [https://www.resu-make.io](https://www.resu-make.io)
 
-![Site preview](docs/screenshot.png)
+![Site preview](docs/preview_screenshot.png)
