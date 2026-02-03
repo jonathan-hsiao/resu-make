@@ -1,4 +1,4 @@
-# Resu-Make
+# resu-make.io
 
 A lightweight resume builder web app built with the **MERN** stack (MongoDB, Express, React, Node.js).
 
